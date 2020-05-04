@@ -33,7 +33,7 @@ public class Client {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public int setDiscount(int discount) {
+    public void setDiscount(int discount) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
