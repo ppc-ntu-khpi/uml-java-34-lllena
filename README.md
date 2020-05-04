@@ -18,3 +18,6 @@
 
 ## Використані інструменти
 1. [easyUML for Netbeans](http://plugins.netbeans.org/plugin/55435/easyuml)
+
+## Результат
+<img src="https://github.com/ppc-ntu-khpi/uml-java-34-lllena/blob/master/other/CafeDiagrams.png" width="100%"/>
