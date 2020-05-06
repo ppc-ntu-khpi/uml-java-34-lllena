@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="cafe">
+  <ClassDiagramComponents>
+    <Class name="Client" package="" visibility="public" xPosition="25.0" yPosition="35.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="login" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+        <Field name="discount" type="int" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="phone" type="int" visibility="private"/>
+        <Field name="idClient" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="name"/>
+          <Argument type="int" name="login"/>
+          <Argument type="int" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getInfo" returnType="String" visibility="public"/>
+        <Method name="orderCreation" returnType="int" visibility="public">
+          <Argument type="int" name="idClient"/>
+          <Argument type="int" name="discount"/>
+        </Method>
+        <Method name="orderCreation" returnType="int" visibility="public">
+          <Argument type="int" name="idClient"/>
+        </Method>
+        <Method name="getIdClient" returnType="int" visibility="public"/>
+        <Method name="setDiscount" returnType="int" visibility="public">
+          <Argument type="int" name="discount"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Order" package="" visibility="public" xPosition="391.0" yPosition="35.0">
+      <Fields>
+        <Field name="numder" type="int" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+        <Field name="idClient" type="int" visibility="private"/>
+        <Field name="state" type="boolean" visibility="private"/>
+        <Field name="elementMenu" type="Dish[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="idClient"/>
+          <Argument type="Dish[]" name="elementMenu"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="idClient"/>
+          <Argument type="Dish[]" name="elementMenu"/>
+          <Argument type="int" name="discount"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setInfo" returnType="boolean" visibility="public">
+          <Argument type="boolean" name="state"/>
+        </Method>
+        <Method name="getInfo" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Employee" package="" visibility="public" xPosition="726.0" yPosition="35.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="position" type="String" visibility="private"/>
+        <Field name="phone" type="int" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="position"/>
+          <Argument type="int" name="phone"/>
+          <Argument type="String" name="address"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getInfo" returnType="String" visibility="public"/>
+        <Method name="orderFulfillment" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Dish" package="" visibility="public" xPosition="354.0" yPosition="340.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="price" type="int" visibility="private"/>
+        <Field name="products" type="String[]" visibility="private"/>
+        <Field name="size" type="int" visibility="private"/>
+        <Field name="count" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="price"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getInfo" returnType="String" visibility="public"/>
+        <Method name="addOrder" returnType="void" visibility="public">
+          <Argument type="int" name="count"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="order fulfillment" source="Employee" target="Order" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="" source="Order" target="Dish" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="create order" source="Client" target="Order" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
